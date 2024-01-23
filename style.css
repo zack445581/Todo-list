@@ -1,0 +1,61 @@
+.todo-wrapper {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 2em;
+    height: 500px;
+    border-radius: 12px;
+}
+
+.input-wrapper {}
+
+.input-wrapper input {
+    padding: 1em 0.5em;
+    max-width: 473px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgb(133, 133, 133);
+}
+
+#add-to-list {
+    padding: 1em 3em;
+    border-radius: 12px;
+    border: 0;
+}
+/* 
+.list-item::after {
+    content: "";
+    display: block;
+    background: url('https://cdn.zeplin.io/640b461bdf12907bfd36a104/assets/EFF3685C-3C69-4524-A523-4599F9F30C42.svg') no-repeat;
+    width: 43px;
+    height: 40px;
+    background-size: 33%;
+    cursor: pointer;
+} */
+
+.list {
+    padding: 0;
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.list-item {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* color: #fff; */
+}
+
+.remove {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#input-text:focus-visible {
+    outline: none;
+}
