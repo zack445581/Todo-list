@@ -31,13 +31,19 @@ function AddtoTodolist() {
   input.value = "";
 
   remove.addEventListener("click", function () {
-    RemovefromTodolist();
+    RemovefromTodolist(li);
   });
 }
 
-function RemovefromTodolist() {
-  // for (let i = 0; i < arr.length; i++) {
-  //   const element = arr.length;
-  //   console.log(element)
-  // }
+
+function RemovefromTodolist(itemToRemove) {
+  for (var i = 0; i < list.children.length; i++) {
+    if (list.children[i] === itemToRemove) {
+      console.log(itemToRemove)
+      arr.splice(i, 1);
+      
+      list.removeChild(itemToRemove);
+    }
+  }
 }
+
