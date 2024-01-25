@@ -1,11 +1,11 @@
 var input = document.getElementById("input-text");
-var btn_add = document.getElementById("add-to-list");
+var btnAdd = document.getElementById("add-to-list");
 var list = document.querySelector(".list");
 var remove = document.querySelector(".remove");
-var list_item = document.getElementsByClassName("list-item");
+var listItem = document.getElementsByClassName("list-item");
 var arr = []
 
-btn_add.addEventListener("click", function () {
+btnAdd.addEventListener("click", function () {
   AddtoTodolist();
 });
 
@@ -17,33 +17,43 @@ function AddtoTodolist() {
     var li = document.createElement("li");
     li.className = "list-item";
     list.appendChild(li);
-    // li.textContent = input.value;
 
     arr.push(input.value);
     console.log(arr);
-    arr.map(item => li.textContent = item);
+    arr.map(item => li.innerText = item);
+
+    var update = document.createElement("div");
+    update.className = "action-list-wrapper";
+    li.appendChild(update);
 
     var remove = document.createElement("span");
     remove.className = "remove";
     remove.innerHTML = "&#10060;";
-    li.appendChild(remove);
+    update.appendChild(remove);
+
+    var check = document.createElement("input");
+    check.className = "custom-checkbox";
+    check.setAttribute('type', 'checkbox');
+    update.appendChild(check);
+
+    remove.addEventListener("click", function () {
+      RemovefromTodolist(li);
+    });
+
+    check.addEventListener("change", function () {
+      li.classList.toggle('checked')
+    });
+    input.value = "";
   }
-  input.value = "";
-
-  remove.addEventListener("click", function () {
-    RemovefromTodolist(li);
-  });
 }
-
 
 function RemovefromTodolist(itemToRemove) {
   for (var i = 0; i < list.children.length; i++) {
     if (list.children[i] === itemToRemove) {
       console.log(itemToRemove)
       arr.splice(i, 1);
-      
       list.removeChild(itemToRemove);
+      console.log(arr);
     }
   }
 }
-

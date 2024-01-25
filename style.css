@@ -1,5 +1,5 @@
 .todo-wrapper {
-    max-width: 600px;
+    max-width: 422px;
     width: 100%;
     margin: 0 auto;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -8,11 +8,24 @@
     border-radius: 12px;
 }
 
-.input-wrapper {}
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    background-clip: content-box;
+    padding: 3px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #000000;
+}
 
 .input-wrapper input {
     padding: 1em 0.5em;
-    max-width: 473px;
+    max-width: 297px;
     width: 100%;
     border-radius: 12px;
     border: 1px solid rgb(133, 133, 133);
@@ -23,16 +36,6 @@
     border-radius: 12px;
     border: 0;
 }
-/* 
-.list-item::after {
-    content: "";
-    display: block;
-    background: url('https://cdn.zeplin.io/640b461bdf12907bfd36a104/assets/EFF3685C-3C69-4524-A523-4599F9F30C42.svg') no-repeat;
-    width: 43px;
-    height: 40px;
-    background-size: 33%;
-    cursor: pointer;
-} */
 
 .list {
     padding: 0;
@@ -58,4 +61,15 @@
 
 #input-text:focus-visible {
     outline: none;
+}
+
+.list-item.checked:not(.list-item.checked>div) {
+    text-decoration: line-through;
+    color: #8d8d8d;
+}
+
+.action-list-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
 }
